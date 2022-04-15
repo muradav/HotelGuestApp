@@ -11,6 +11,6 @@ namespace Business.Interfaces
         Hotel Update(int Id, Hotel hotel);
         Hotel Delete(int Id);
         Hotel GetHotel(string name);
-        List<Hotel> GetAll(string name=null);
+        List<Hotel> GetAll();
     }
 }

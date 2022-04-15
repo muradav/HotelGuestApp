@@ -7,86 +7,91 @@ using System.Text;
 
 namespace Business.Services
 {
-    public class HotelService : IHotel
+    public class GuestService : IGuest
     {
         public static int Count { get; set; }
-        private HotelRepository _hotelRepository;
-        public HotelService()
+        private GuestRepository _guestRepository;
+        public GuestService()
         {
-            _hotelRepository = new HotelRepository();
+            _guestRepository=new GuestRepository();
         }
-        public Hotel Create(Hotel hotel)
+        public Guest Create(Guest guest)
         {
             try
             {
-                hotel.Id = Count;
-                _hotelRepository.Create(hotel);
+                guest.Id = Count;
+                _guestRepository.Create(guest);
                 Count++;
-                return hotel;
+                return guest;
             }
             catch (Exception)
             {
+
                 throw;
             }
         }
 
-        public Hotel Delete(int Id)
+        public Guest Delete(int Id)
         {
             try
             {
-                Hotel isExist = _hotelRepository.GetOne(h => h.Id == Id);
+                Guest isExist = _guestRepository.GetOne(g => g.Id == Id);
                 if (isExist == null)
                 {
                     return null;
                 }
-                _hotelRepository.Delete(isExist);
+                _guestRepository.Delete(isExist);
                 return isExist;
             }
             catch (Exception)
             {
+
                 throw;
             }
         }
 
-        public List<Hotel> GetAll()
+        public List<Guest> GetAll()
         {
             try
             {
-                return _hotelRepository.GetAll();
+                return _guestRepository.GetAll();
             }
             catch (Exception)
             {
+
                 throw;
             }
         }
 
-        public Hotel GetHotel(string name)
+        public Guest GetGuest(string name)
         {
             try
             {
-                return _hotelRepository.GetOne(g => g.Name == name);
+                return _guestRepository.GetOne(g => g.Name == name);
             }
             catch (Exception)
             {
+
                 throw;
             }
         }
 
-        public Hotel Update(int Id, Hotel hotel)
+        public Guest Update(int Id, Guest guest)
         {
             try
             {
-                Hotel isExsit = _hotelRepository.GetOne(g => g.Id == Id);
+                Guest isExsit = _guestRepository.GetOne(g => g.Id == Id);
                 if (isExsit == null)
                 {
                     return null;
                 }
-                isExsit.Name = hotel.Name;
-                _hotelRepository.Update(hotel);
-                return hotel;
+                isExsit.Name = guest.Name;
+                _guestRepository.Update(guest);
+                return guest;
             }
             catch (Exception)
             {
+
                 throw;
             }
         }
