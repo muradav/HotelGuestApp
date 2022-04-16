@@ -63,11 +63,11 @@ namespace Business.Services
             }
         }
 
-        public Guest GetGuest(string name)
+        public Guest GetGuest(int id)
         {
             try
             {
-                return _guestRepository.GetOne(g => g.Name == name);
+                return _guestRepository.GetOne(g => g.Id == id);
             }
             catch (Exception)
             {

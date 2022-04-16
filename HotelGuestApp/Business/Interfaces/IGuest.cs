@@ -10,7 +10,7 @@ namespace Business.Interfaces
         Guest Create(Guest guest);
         Guest Update(int Id, Guest guest);
         Guest Delete(int Id);
-        Guest GetGuest(string name);
+        Guest GetGuest(int Id);
         List<Guest> GetAll();
     }
 }

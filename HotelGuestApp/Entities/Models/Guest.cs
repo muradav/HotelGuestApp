@@ -19,5 +19,7 @@ namespace Entities.Models
             ReservationTime=DateTime.Now;
         }
 
+       
+
     }
 }
