@@ -10,6 +10,7 @@ namespace HotelGuestApp.Controllers
     public class GuestController
     {
         private GuestService _guestService;
+
         public GuestController()
         {
             _guestService = new GuestService();
@@ -111,7 +112,12 @@ namespace HotelGuestApp.Controllers
             Extention.Print(ConsoleColor.Green, "Enter Guest ID: ");
             int id = int.Parse(Console.ReadLine());
 
-            Extention.Print(ConsoleColor.Green, $"{_guestService.GetGuest(id).Name}");
+            Extention.Print(ConsoleColor.Green, $"Id: {_guestService.GetGuest(id).Id} \n" +
+                $"Name: {_guestService.GetGuest(id).Name} \n" +
+                $"Surname: {_guestService.GetGuest(id).Surname} \n" +
+                $"Phone Number: {_guestService.GetGuest(id).PhoneNumber} \n" +
+                $"Email: {_guestService.GetGuest(id).Email} \n" +
+                $"Reservation time: {_guestService.GetGuest(id).ReservationTime}");
         }
 
         public void GetAllGuest()

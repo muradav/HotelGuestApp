@@ -10,9 +10,12 @@ namespace HotelGuestApp.Controllers
     public class HotelController
     {
         private HotelService _hotelService;
+        public List<Guest> guest { get; set; }
         public HotelController()
         {
             _hotelService = new HotelService();
+            guest=new List<Guest>();
+
         }
 
         public void CreateHotel()
@@ -93,7 +96,7 @@ namespace HotelGuestApp.Controllers
                 {
                     Name = name
                 };
-                Extention.Print(ConsoleColor.Green, $"Updated {_hotelService.Update(id, hotel).Name}");
+                Extention.Print(ConsoleColor.Green, $"Updated new Hotel Name: {_hotelService.Update(id, hotel).Name}");
             }
             else
             {

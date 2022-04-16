@@ -9,7 +9,7 @@ namespace Business.Services
 {
     public class HotelService : IHotel
     {
-        public static int Count { get; set; }
+        public static int Count { get; set; } = 1;
         private HotelRepository _hotelRepository;
         public HotelService()
         {
@@ -18,7 +18,7 @@ namespace Business.Services
         public Hotel Create(Hotel hotel)
         {
             try
-            {
+            {                
                 hotel.Id = Count;
                 _hotelRepository.Create(hotel);
                 Count++;

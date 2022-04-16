@@ -9,7 +9,7 @@ namespace Business.Services
 {
     public class GuestService : IGuest
     {
-        public static int Count { get; set; }
+        public static int Count { get; set; } = 1;
         private GuestRepository _guestRepository;
         public GuestService()
         {
