@@ -106,18 +106,19 @@ namespace HotelGuestApp.Controllers
         }
 
 
-        public void GetGuest()
+        public Guest GetGuest()
         {
             Console.Clear();
             Extention.Print(ConsoleColor.Green, "Enter Guest ID: ");
             int id = int.Parse(Console.ReadLine());
-
-            Extention.Print(ConsoleColor.Green, $"Id: {_guestService.GetGuest(id).Id} \n" +
-                $"Name: {_guestService.GetGuest(id).Name} \n" +
-                $"Surname: {_guestService.GetGuest(id).Surname} \n" +
-                $"Phone Number: {_guestService.GetGuest(id).PhoneNumber} \n" +
-                $"Email: {_guestService.GetGuest(id).Email} \n" +
-                $"Reservation time: {_guestService.GetGuest(id).ReservationTime}");
+            Guest guest = _guestService.GetGuest(id);
+            Extention.Print(ConsoleColor.Green, $"Id: {guest.Id} \n" +
+                $"Name: {guest.Name} \n" +
+                $"Surname: {guest.Surname} \n" +
+                $"Phone Number: {guest.PhoneNumber} \n" +
+                $"Email: {guest.Email} \n" +
+                $"Reservation time: {guest.ReservationTime}");
+            return _guestService.GetGuest(id);
         }
 
         public void GetAllGuest()

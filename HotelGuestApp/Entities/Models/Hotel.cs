@@ -10,6 +10,11 @@ namespace Entities.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public int Capacity { get; set; }
+        public List<Guest> guests;
+        public Hotel()
+        {
+            guests = new List<Guest>();
+        }
         
     }
 }

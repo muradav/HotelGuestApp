@@ -13,3 +13,5 @@ C:\Users\HP\Desktop\CodeAcademy\Development\HotelGuestApp\HotelGuestApp\Business
 C:\Users\HP\Desktop\CodeAcademy\Development\HotelGuestApp\HotelGuestApp\Business\obj\Debug\netcoreapp3.1\Business.csproj.CopyComplete
 C:\Users\HP\Desktop\CodeAcademy\Development\HotelGuestApp\HotelGuestApp\Business\obj\Debug\netcoreapp3.1\Business.dll
 C:\Users\HP\Desktop\CodeAcademy\Development\HotelGuestApp\HotelGuestApp\Business\obj\Debug\netcoreapp3.1\Business.pdb
+C:\Users\HP\Desktop\CodeAcademy\Development\HotelGuestApp\HotelGuestApp\Business\bin\Debug\netcoreapp3.1\Utilities.dll
+C:\Users\HP\Desktop\CodeAcademy\Development\HotelGuestApp\HotelGuestApp\Business\bin\Debug\netcoreapp3.1\Utilities.pdb

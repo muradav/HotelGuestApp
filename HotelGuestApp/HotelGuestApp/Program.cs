@@ -8,9 +8,9 @@ namespace HotelGuestApp
     {
         static void Main(string[] args)
         {            
-            Extention.Print(ConsoleColor.Magenta, "Welcome!");
+            
         choiceMenu:
-            Console.Clear();
+            Extention.Print(ConsoleColor.Magenta, "Welcome!");
             Extention.ChoiceMenu();
             int input = int.Parse(Console.ReadLine());
 
@@ -18,14 +18,13 @@ namespace HotelGuestApp
             {
                 HotelController hotelController = new HotelController();
                 GuestController guestController = new GuestController();
-                //Extention.MainMenu();           
-
+                
                 switch (input)
                 {
-
+                   
 
                     case (int)Extention.ChoiceEnum.HotelWorks:
-                        Console.Clear();
+                        
                         Extention.MainMenu1();
                         int input2 = int.Parse(Console.ReadLine());
                         switch (input2)
@@ -36,6 +35,14 @@ namespace HotelGuestApp
 
                             case (int)Extention.HotelMenu.UpdateHotel:
                                 hotelController.UpdateHotel();
+                                break;
+
+                            case (int)Extention.HotelMenu.AddGuestHotel:
+                                hotelController.AddGuest();
+                                break;
+
+                            case (int)Extention.HotelMenu.ShowGuests:
+                                hotelController.ShowGuestByHotel();
                                 break;
 
                             case (int)Extention.HotelMenu.RemoveHotel:
@@ -55,7 +62,7 @@ namespace HotelGuestApp
                         }
                         break;
                     case (int)Extention.ChoiceEnum.GuestWorks:
-                        Console.Clear();
+                        
                         Extention.MainMenu2();
                         int input3 = int.Parse(Console.ReadLine());
                         switch (input3)

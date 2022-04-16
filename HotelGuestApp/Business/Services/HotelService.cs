@@ -4,6 +4,7 @@ using Entities.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Utilities.Helper;
 
 namespace Business.Services
 {
@@ -87,6 +88,30 @@ namespace Business.Services
             }
             catch (Exception)
             {
+                throw;
+            }
+        }
+        public Hotel AddGuest(Guest guest,int id)
+        {
+            try
+            {
+                Hotel hotel = _hotelRepository.GetOne(h => h.Id == id);
+                if (hotel == null)
+                    return null;
+                if (hotel.Capacity>0)
+                {
+                    _hotelRepository.AddGuest(hotel, guest);
+                    hotel.Capacity--;
+                }
+                else
+                {
+                    Extention.Print(ConsoleColor.Red, "There is not empty room. Please come later");                    
+                }
+                return hotel;
+            }
+            catch (Exception)
+            {
+
                 throw;
             }
         }

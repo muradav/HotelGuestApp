@@ -71,5 +71,19 @@ namespace DataAccess.Repositories
             isExist = entity;
             return true;
         }
+
+        public void AddGuest(Hotel hotel,Guest guest)
+        {
+            try
+            {
+                hotel.guests.Add(guest);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+        }
     }
 }

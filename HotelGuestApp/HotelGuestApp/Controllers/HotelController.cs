@@ -10,11 +10,13 @@ namespace HotelGuestApp.Controllers
     public class HotelController
     {
         private HotelService _hotelService;
+        private GuestController _guestService;
         public List<Guest> guest { get; set; }
         public HotelController()
         {
             _hotelService = new HotelService();
             guest=new List<Guest>();
+            _guestService = new GuestController();
 
         }
 
@@ -55,7 +57,9 @@ namespace HotelGuestApp.Controllers
             Console.Clear();
             foreach (var item in _hotelService.GetAll())
             {
-                Extention.Print(ConsoleColor.Yellow, $"ID: {item.Id}, Name: {item.Name}");
+                Extention.Print(ConsoleColor.Yellow, $"ID: {item.Id} \n" +
+                    $"Name: {item.Name} \n" +
+                    $"Empty Room: {item.Capacity}");
             }
         }
 
@@ -96,7 +100,7 @@ namespace HotelGuestApp.Controllers
                 {
                     Name = name
                 };
-                Extention.Print(ConsoleColor.Green, $"Updated new Hotel Name: {_hotelService.Update(id, hotel).Name}");
+                Extention.Print(ConsoleColor.Green, $"Updated Hotel Name: {_hotelService.Update(id, hotel).Name}");
             }
             else
             {
@@ -105,14 +109,35 @@ namespace HotelGuestApp.Controllers
             }
         }
 
-        public void GetHotel()
+        public Hotel GetHotel()
         {
             Console.Clear();
             Extention.Print(ConsoleColor.Green, "Enter Hotel Name:");
             string name = Console.ReadLine();
-
-            Extention.Print(ConsoleColor.Green, $"{_hotelService.GetHotel(name).Name}");
+            Hotel hotel = _hotelService.GetHotel(name);
+            Extention.Print(ConsoleColor.Green, $"ID: {hotel.Id} \n" +
+                $"Name: {hotel.Name} \n" +
+                $"Empty Room: {hotel.Capacity}");
+            return _hotelService.GetHotel(name);
 
         }
+        public void AddGuest()
+        {
+            //string name = Console.ReadLine();
+            Hotel hotel = GetHotel();
+            //int id = int.Parse(Console.ReadLine()); 
+            Guest guest = _guestService.GetGuest();
+            _hotelService.AddGuest(guest,hotel.Id);
+            //Extention.Print(Console)
+        }
+        public void ShowGuestByHotel()
+        {
+            Hotel hotel = GetHotel();
+            foreach (var item in hotel.guests)
+            {
+                Console.WriteLine(item);
+            }
+        }
+
     }
 }

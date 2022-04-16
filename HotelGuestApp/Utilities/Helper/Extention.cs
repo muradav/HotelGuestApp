@@ -15,7 +15,7 @@ namespace Utilities.Helper
 
         public enum HotelMenu
         {
-            CreateHotel=1, UpdateHotel, RemoveHotel, GetHotel, GetAllHotels, Quit=0
+            CreateHotel=1, UpdateHotel, RemoveHotel, AddGuestHotel, ShowGuests, GetHotel, GetAllHotels, Quit=0
         }
         public enum GuestMenu
         {
@@ -32,8 +32,10 @@ namespace Utilities.Helper
             Extention.Print(ConsoleColor.Cyan, "1.Create Hotel\n" +
                 "2.Update Hotel\n" +
                 "3.Remove Hotel\n" +
-                "4.Get Hotel\n" +
-                "5.Get All Hotel \n" +
+                "4.Add Guest to Hotel \n" +
+                "5.Show Guest By Hotel \n" +
+                "6.Get Hotel\n" +
+                "7.Get All Hotel \n" +
                 "0.Quit");
         }
         public static void MainMenu2()
@@ -44,14 +46,14 @@ namespace Utilities.Helper
                 "3.Canceling Reservation\n" +
                 "4.Get Guest\n" +
                 "5.Get All Guests \n" +
-                "0.Quit");
+                "0.Quit");            
         }
         public static void ChoiceMenu()
         {
             Extention.Print(ConsoleColor.DarkCyan, "Work Places");
             Extention.Print(ConsoleColor.Cyan, "1.Work with Hotels \n" +
                 "2.Work with guests");
-            Extention.Print(ConsoleColor.Cyan, "Choose Your work place: ");
+            Extention.Print(ConsoleColor.Cyan, "Choose Your work place: ");            
         }
     }
 }
