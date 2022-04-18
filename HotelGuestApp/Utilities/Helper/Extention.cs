@@ -15,45 +15,48 @@ namespace Utilities.Helper
 
         public enum HotelMenu
         {
-            CreateHotel=1, UpdateHotel, RemoveHotel, AddGuestHotel, ShowGuests, GetHotel, GetAllHotels, Quit=0
+            CreateHotel=1, UpdateHotel, RemoveHotel, AddGuestHotel, ShowGuests, GetHotel, GetAllHotels, BackToMain=0
         }
         public enum GuestMenu
         {
-            AddGuest=1, UpdateGuest, RemoveGuest, GetGuest, GetAllGuests, Quit=0
+            AddGuest=1, UpdateGuest, RemoveGuest, GetGuest, GetAllGuests, BackToMain=0
         }
         public enum ChoiceEnum
         {
-            HotelWorks=1,GuestWorks
+            HotelWorks=1,GuestWorks,Quit=0
         }
 
         public static void MainMenu1()
         {
-            Extention.Print(ConsoleColor.DarkCyan, "Hotel Menu");
-            Extention.Print(ConsoleColor.Cyan, "1.Create Hotel\n" +
+            Print(ConsoleColor.DarkCyan, "Hotel Menu");
+            Print(ConsoleColor.Cyan, "1.Create Hotel\n" +
                 "2.Update Hotel\n" +
                 "3.Remove Hotel\n" +
                 "4.Add Guest to Hotel \n" +
                 "5.Show Guest By Hotel \n" +
                 "6.Get Hotel\n" +
                 "7.Get All Hotel \n" +
-                "0.Quit");
+                "0.Back to Main Menu");
+            Print(ConsoleColor.Cyan, "Please enter your choice");
         }
         public static void MainMenu2()
         {
-            Extention.Print(ConsoleColor.DarkCyan, "Guest Menu");
-            Extention.Print(ConsoleColor.Cyan, "1.Guest Reservation\n" +
+            Print(ConsoleColor.DarkCyan, "Guest Menu");
+            Print(ConsoleColor.Cyan, "1.Guest Reservation\n" +
                 "2.Update Reservation\n" +
                 "3.Canceling Reservation\n" +
                 "4.Get Guest\n" +
                 "5.Get All Guests \n" +
-                "0.Quit");            
+                "0.Back to Main Menu");
+            Print(ConsoleColor.Cyan, "Please enter your choice");
         }
         public static void ChoiceMenu()
         {
-            Extention.Print(ConsoleColor.DarkCyan, "Work Places");
-            Extention.Print(ConsoleColor.Cyan, "1.Work with Hotels \n" +
-                "2.Work with guests");
-            Extention.Print(ConsoleColor.Cyan, "Choose Your work place: ");            
+            Print(ConsoleColor.DarkCyan, "Work Places");
+            Print(ConsoleColor.Cyan, "1.Work with Hotels \n" +
+                "2.Work with guests \n" +
+                "3.Quit");
+            Print(ConsoleColor.Cyan, "Choose Your work place: ");            
         }
     }
 }

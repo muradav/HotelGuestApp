@@ -43,6 +43,7 @@ namespace HotelGuestApp.Controllers
 
                 _hotelService.Create(hotel);
                 Extention.Print(ConsoleColor.Green, $"{hotel.Name} created.");
+                //Extention.Print(ConsoleColor.DarkYellow, "For continue press Enter");
             }
             else
             {
@@ -123,6 +124,7 @@ namespace HotelGuestApp.Controllers
         }
         public void AddGuest()
         {
+            Console.Clear();
             //string name = Console.ReadLine();
             Hotel hotel = GetHotel();
             //int id = int.Parse(Console.ReadLine()); 
@@ -132,6 +134,7 @@ namespace HotelGuestApp.Controllers
         }
         public void ShowGuestByHotel()
         {
+            Console.Clear();
             Hotel hotel = GetHotel();
             foreach (var item in hotel.guests)
             {
